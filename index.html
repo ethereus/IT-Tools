@@ -1,61 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Number Converter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-    }
-    input, button {
-      font-size: 1rem;
-      padding: 0.5rem;
-      margin: 0.5rem 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Number Converter</h1>
-    <p>Enter a number:</p>
-    <input type="number" id="numberInput" placeholder="Enter number">
-    <button onclick="convertNumber()">Convert</button>
-    <p id="result"></p>
-  </div>
-
-  <script>
-    function convertNumber() {
-      const input = parseFloat(document.getElementById("numberInput").value);
-      let result;
-
-      if (isNaN(input)) {
-        result = "Please enter a valid number.";
-      } else if (input < 10) {
-        result = input + 50;
-      } else if (input > 10 && input < 100) {
-        result = input;
-      } else if (input > 300 && input < 500) {
-        result = input - 200;
-      } else if (input > 500) {
-        let tempResult = input - 300;
-        result = tempResult > 255 ? tempResult - 100 : tempResult;
-      } else {
-        result = "No conversion applied.";
-      }
-
-      document.getElementById("result").innerText = `Converted number: ${result}`;
-    }
-  </script>
+    <h1>Directory Listing</h1>
+    <ul>
+        <li><a href=\"ethereus.github.io/IT-Tools/pages/index.html">pages</a></li>
+    </ul>
 </body>
 </html>
