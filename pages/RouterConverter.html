@@ -55,6 +55,8 @@
       } else if (input > 500) {
         let tempResult = input - 300;
         result = tempResult > 255 ? tempResult - 100 : tempResult;
+      } else if (input >= 100 && input < 200) {
+        result = input - 100;
       } else {
         result = "No conversion applied.";
       }
