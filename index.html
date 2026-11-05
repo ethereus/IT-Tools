@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directory Listing</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        ul {
-            list-style-type: none;
-        }
-        li {
-            margin: 5px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; connect-src https://cloudflare-dns.com https://1.1.1.1 https://www.cloudflare.com https://speed.cloudflare.com https://rdap.org https://rdap.verisign.com https://rdap.arin.net https://rdap.db.ripe.net https://rdap.apnic.net https://rdap.lacnic.net https://rdap.afrinic.net https://rdap.nominet.uk https://rdap.publicinterestregistry.org https://pubapi.registry.google; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <title>IT Tools</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-    <h1>Directory Listing</h1>
-    <ul>
-        <li><a href="pages/index.html">pages</a></li>
-    </ul>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="side" aria-label="Categories">
+      <a class="brand" href="#/">
+        <svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="5" fill="#171c22"/><path d="M6 8h14v8h-4v3h-6v-3H6z" fill="#3fe3a4"/><rect x="9" y="4" width="3" height="2" fill="#ffb547"/><rect x="14" y="4" width="3" height="2" fill="#3fe3a4"/></svg>
+        <span>IT Tools</span>
+      </a>
+      <nav id="nav"></nav>
+    </aside>
+    <div class="wrap">
+      <div class="top">
+        <button class="icon-btn" id="menu-btn" type="button" aria-label="Open categories">☰</button>
+        <button id="open-search" type="button"><span>Search tools</span><kbd>Ctrl K</kbd></button>
+        <a class="icon-btn" href="https://github.com/ethereus/IT-Tools" rel="noopener">GitHub</a>
+        <button class="icon-btn" id="theme-btn" type="button" aria-label="Switch between light and dark">◐</button>
+      </div>
+      <main id="main" tabindex="-1">
+        <noscript><p>JavaScript required.</p></noscript>
+      </main>
+    </div>
+  </div>
+  <div id="scrim"></div>
+  <div id="palette" hidden>
+    <div class="pal-box" role="dialog" aria-modal="true" aria-label="Search tools">
+      <input id="pal-q" type="text" placeholder="Search" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="pal-list">
+      <div id="pal-list" role="listbox"></div>
+    </div>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/vendor/qrcode.js"></script>
+  <script src="assets/vendor/js-yaml.min.js"></script>
+  <script src="assets/vendor/bcrypt.min.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/tools-network.js"></script>
+  <script src="assets/js/tools-web.js"></script>
+  <script src="assets/js/tools-security.js"></script>
+  <script src="assets/js/tools-encode.js"></script>
+  <script src="assets/js/tools-ops.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
